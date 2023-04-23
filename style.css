@@ -9,7 +9,6 @@ body {
     color: #fafaf9;
     font-family: "Sono", sans-serif;
     padding: 48px 64px;
-    font-weight: 400;
 }
 
 /* Main Layaout */
@@ -53,7 +52,6 @@ body {
 h1 {
     font-size: 42px;
     text-transform: uppercase;
-    text-align: center;
     font-family: "Coiny", sans-serif;
     line-height: 1;
     margin-top: 6px;
@@ -157,7 +155,7 @@ ul {
 }
 
 .btn-large {
-    font-size: 30px;
+    font-size: 20px;
     padding: 20px 32px 17px;
 }
 
