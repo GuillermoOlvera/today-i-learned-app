@@ -28,8 +28,13 @@ body {
 .fact-form {
     background-color: #44403c;
     margin-bottom: 40px;
-    padding: 16px 40px;
+    padding: 16px 32px;
     text-align: center;
+    border-radius: 16px;
+
+    display: flex;
+    align-items: center;
+    gap: 16px;
 }
 
 .main {
@@ -73,7 +78,6 @@ h1 {
 
     display: flex;
     align-items: center;
-    justify-content: space-between;
     gap: 24px;
 }
 
@@ -161,4 +165,30 @@ ul {
 .btn-category {
     width: 100%;
     background-image: none;
+}
+
+.fact-form input,
+.fact-form select {
+    max-width: 220px;
+    background-color: #78716c;
+    border: none;
+    border-radius: 100px;
+    padding: 16px;
+    font-size: 18px;
+    color: inherit;
+    font-family: inherit;
+}
+
+.fact-form input::placeholder {
+    color: #a8a29e;
+}
+
+.fact-form input:first-child {
+    flex-grow: 1;
+}
+
+.fact-form span {
+    font-weight: 600;
+    font-size: 18px;
+    margin-right: 18px;
 }
