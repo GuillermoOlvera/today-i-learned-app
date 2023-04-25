@@ -1,3 +1,6 @@
+import { CategoryFilter } from './components/CategoryFilter';
+import { FactList } from './components/FactList';
+import { NewFactForm } from './components/NewFactForm';
 import './style.css';
 
 export const App = () => {
@@ -17,6 +20,12 @@ export const App = () => {
             
             <button className="btn btn-large btn-open">Shared a fact</button>
         </header>
+
+        <NewFactForm />
+        <main className='main'>
+          <CategoryFilter />
+          <FactList />
+        </main>
     </>
   )
 }
