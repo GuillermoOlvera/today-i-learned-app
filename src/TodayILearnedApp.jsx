@@ -1,7 +1,11 @@
+import { useState } from "react";
 import { CategoryFilter, FactList, NewFactForm } from "./components";
 import "./style.css";
 
-export const App = () => {
+export const TodayILearned = () => {
+
+  const [showForm, setShowForm] = useState(false);
+
   return (
     <>
       <header className="header">
@@ -15,10 +19,16 @@ export const App = () => {
           <h1>Today I Learned!</h1>
         </div>
 
-        <button className="btn btn-large btn-open">Shared a fact</button>
+        <button 
+          className="btn btn-large btn-open" 
+          // Update state variable
+          onClick={() => setShowForm(show => !show) }
+        >
+          Shared a fact
+        </button>
       </header>
-
-      <NewFactForm />
+      {/* use state variable */}
+      { showForm && <NewFactForm /> }
       <main className="main">
         <CategoryFilter />
         <FactList />
