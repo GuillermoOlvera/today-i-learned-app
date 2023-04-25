@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { CategoryFilter, FactList, NewFactForm } from "./components";
+import { CategoryFilter, FactList, NewFactForm, Header } from "./components";
+
 import "./style.css";
-import { Header } from "./components/Header";
 
 export const TodayILearned = () => {
 
