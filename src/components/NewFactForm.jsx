@@ -1,7 +1,17 @@
 import { useState } from 'react';
 import { CATEGORIES } from '../data';
 
-export const NewFactForm = () => {
+const isValidHttpUrl = (string) => {
+  let url;
+  try {
+    url = new URL(string)
+  } catch (error) {
+    return false;
+  }
+  return url.protocol === 'http:' || url.protocol === 'https:';
+}
+
+export const NewFactForm = ({ setFacts, setShowForm }) => {
 
   const [text, setText] = useState('');
   const [source, setSource] = useState('');
@@ -10,8 +20,31 @@ export const NewFactForm = () => {
   const textLength = text.length;
 
   const handleSubmit = (event) => {
+    // 1. Prevent browser reload
     event.preventDefault();
-    
+
+    // 2. Check if data is valid. If so, create a new fact
+    if(text && isValidHttpUrl(source) && category && textLength <= 200){
+      // 3. Create a new fact object
+      const newFact = {
+        id: Math.round(Math.random() * 1000000),
+        text,
+        source,
+        category,
+        votesInteresting: 0,
+        votesMindblowing: 0,
+        votesFalse: 0,
+        createdIn: new Date().getFullYear(),
+      }
+      // 4. Add a new fact to state
+      setFacts(facts => [newFact, ...facts]);
+      // 5. Reset input fields
+      setText('');
+      setSource('');
+      setCategory('');
+      // 6. Close Form
+      setShowForm(false);
+    }
   }
 
   return (
@@ -45,7 +78,7 @@ export const NewFactForm = () => {
             ))
           }
       </select>
-      <button class="btn btn-large">Post</button>
+      <button className="btn btn-large">Post</button>
     </form>
   )
 }
