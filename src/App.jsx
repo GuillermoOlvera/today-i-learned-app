@@ -1,6 +1,4 @@
-import { CategoryFilter } from "./components/CategoryFilter";
-import { FactList } from "./components/FactList";
-import { NewFactForm } from "./components/NewFactForm";
+import { CategoryFilter, FactList, NewFactForm } from "./components";
 import "./style.css";
 
 export const App = () => {

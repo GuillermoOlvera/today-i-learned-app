@@ -16,8 +16,8 @@ body {
 }
 
 /* Main Layaout */
-.container {
-    max-width: 1000px;
+#root {
+    max-width: 1500px;
     margin: 0 auto;
 }
 
