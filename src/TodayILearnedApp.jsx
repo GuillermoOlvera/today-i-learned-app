@@ -1,10 +1,8 @@
 import { useEffect, useState } from "react";
-import { supabase } from "./data/superbase";
-
-import { CategoryFilter, FactList, NewFactForm, Header } from "./components";
+import { supabase } from "./data/supabase";
+import { CategoryFilter, FactList, NewFactForm, Header, Loading } from "./components";
 
 import "./style.css";
-import { Loading } from "./components/Loading";
 
 export const TodayILearned = () => {
 

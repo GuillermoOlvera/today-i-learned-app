@@ -6,11 +6,20 @@ export const CategoryFilter = ({ setCurrentCategory }) => {
     <aside>
       <ul>
         <li className="category">
-          <button className="btn btn-all-categories" onClick={() => setCurrentCategory('all')}>All</button>
+          <button 
+            className="btn btn-all-categories" 
+            onClick={() => setCurrentCategory('all')}
+          >
+            All
+          </button>
         </li>
         {
           CATEGORIES.map( category => (
-            <Category key={ category.name } category={ category } setCurrentCategory={ setCurrentCategory }/>
+            <Category 
+              key={ category.name } 
+              category={ category } 
+              setCurrentCategory={ setCurrentCategory }
+            />
           ))
         }
       </ul>
