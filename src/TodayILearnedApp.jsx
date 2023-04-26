@@ -46,7 +46,10 @@ export const TodayILearned = () => {
         {
           isLoading 
             ? <Loading /> 
-            : <FactList facts={ facts }/>
+            : <FactList 
+                facts={ facts }
+                setFacts={ setFacts }
+              />
         }
       </main>
     </>

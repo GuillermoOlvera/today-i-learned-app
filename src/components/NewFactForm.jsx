@@ -36,7 +36,7 @@ export const NewFactForm = ({ setFacts, setShowForm }) => {
         .select();
       setIsUploading(false);
       // 4. Add a new fact to state
-      setFacts(facts => [newFact[0], ...facts]);
+      if(!error) setFacts(facts => [newFact[0], ...facts]);
       // 5. Reset input fields
       setText('');
       setSource('');

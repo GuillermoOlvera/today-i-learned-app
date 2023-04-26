@@ -1,7 +1,7 @@
 import { CATEGORIES } from "../data";
 import { Fact } from "./Fact";
 
-export const FactList = ({ facts }) => {
+export const FactList = ({ facts, setFacts }) => {
 
   if(facts.length === 0) {
     return (
@@ -10,12 +10,18 @@ export const FactList = ({ facts }) => {
       </p>
     )
   }
+  
   return (
     <section>
       <ul className="facts-list">
         {
           facts.map((fact) => (
-            <Fact fact={ fact } CATEGORIES={ CATEGORIES } key={ fact.id }/>
+            <Fact 
+              fact={ fact } 
+              CATEGORIES={ CATEGORIES } 
+              key={ fact.id } 
+              setFacts={ setFacts }
+            />
         ))}
       </ul>
     </section>
